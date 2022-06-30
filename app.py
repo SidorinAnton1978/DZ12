@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, send_from_directory
 # from functions import ...
+from loader.views import loader_blueprint
 from main.views import main_blueprint
 
 POST_PATH = "posts.json"
@@ -9,6 +10,7 @@ app = Flask(__name__)
 
 
 app.register_blueprint(main_blueprint)
+app.register_blueprint(loader_blueprint)
 
 
 @app.route("/list")
@@ -31,5 +33,6 @@ def static_dir(path):
     return send_from_directory("uploads", path)
 
 
-app.run()
+if __name__ == '__main__':
+    app.run()
 
