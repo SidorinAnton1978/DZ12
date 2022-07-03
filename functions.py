@@ -19,3 +19,11 @@ def save_picture(picture):
     path = f'uploads/images/{filename}'
     picture.save(path)
     return path
+
+
+def add_post(post):
+    posts = load_json()
+    posts.append(post)
+    with open('posts.json', 'w', encoding='utf-8') as file:
+        json.dump(posts, file)
+    return posts

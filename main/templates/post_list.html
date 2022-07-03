@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Все посты найденные по запросу "{{ word }}"</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../../static/style.css">
 </head>
 <body>
 <main>
 
-    <a href="/static" class="link">Назад</a>
+    <a href="/" class="link">Назад</a>
 
     <h1>Посты по запросу "{{ word }}"</h1>
     {% for post in posts %}
@@ -21,7 +21,7 @@
         <hr>
     {% endfor %}
 
-    <a href="../loader/templates/post_form.html" class="button">Добавить пост</a>
+    <a href="/post" class="button">Добавить пост</a>
 
 </main>
 </body>
