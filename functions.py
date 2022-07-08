@@ -26,4 +26,4 @@ def add_post(post):
     posts.append(post)
     with open('posts.json', 'w', encoding='utf-8') as file:
         json.dump(posts, file)
-    return posts
+    return post

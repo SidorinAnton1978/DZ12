@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, send_from_directory
-# from functions import ...
+
 from loader.views import loader_blueprint
 from main.views import main_blueprint
 
@@ -7,6 +7,7 @@ POST_PATH = "posts.json"
 UPLOAD_FOLDER = "uploads/images"
 
 app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 
 
 app.register_blueprint(main_blueprint)
